@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -68,6 +69,24 @@ namespace axx78y_gyak05
             }
 
             return value;
+        }
+
+        private void WriteFile(List<decimal> Nyereségek)
+        {
+            SaveFileDialog sf = new SaveFileDialog();
+            sf.Filter = ("CSV|.csv");
+
+            if(sf.ShowDialog() == DialogResult.OK)
+            {
+                using (StreamWriter sw = new StreamWriter(sf.FileName, false, Encoding.UTF8))
+                {
+                    sw.WriteLine("Időszak" + "," + "Nyereség");
+                    for (int i = 0; i < Nyereségek.Count(); i++)
+                    {
+                        sw.WriteLine(i + "," + Nyereségek[i].ToString().Replace(",", "."));
+                    }
+                }
+            }
         }
     }
 }
