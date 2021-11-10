@@ -33,10 +33,17 @@ namespace axx78y_gyak08
             this.mainPanel = new System.Windows.Forms.Panel();
             this.createTimer = new System.Windows.Forms.Timer(this.components);
             this.conveyorTimer = new System.Windows.Forms.Timer(this.components);
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.lblNext = new System.Windows.Forms.Label();
+            this.mainPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // mainPanel
             // 
+            this.mainPanel.Controls.Add(this.lblNext);
+            this.mainPanel.Controls.Add(this.button2);
+            this.mainPanel.Controls.Add(this.button1);
             this.mainPanel.Location = new System.Drawing.Point(1, 1);
             this.mainPanel.Name = "mainPanel";
             this.mainPanel.Size = new System.Drawing.Size(799, 450);
@@ -54,6 +61,35 @@ namespace axx78y_gyak08
             this.conveyorTimer.Interval = 10;
             this.conveyorTimer.Tick += new System.EventHandler(this.conveyorTimer_Tick);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(48, 50);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(94, 65);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "CAR";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(148, 50);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(94, 65);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "BALL";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // lblNext
+            // 
+            this.lblNext.AutoSize = true;
+            this.lblNext.Location = new System.Drawing.Point(327, 17);
+            this.lblNext.Name = "lblNext";
+            this.lblNext.Size = new System.Drawing.Size(91, 17);
+            this.lblNext.TabIndex = 2;
+            this.lblNext.Text = "Coming Next:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -62,6 +98,8 @@ namespace axx78y_gyak08
             this.Controls.Add(this.mainPanel);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.mainPanel.ResumeLayout(false);
+            this.mainPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -71,6 +109,9 @@ namespace axx78y_gyak08
         private System.Windows.Forms.Panel mainPanel;
         private System.Windows.Forms.Timer createTimer;
         private System.Windows.Forms.Timer conveyorTimer;
+        private System.Windows.Forms.Label lblNext;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
     }
 }
 
