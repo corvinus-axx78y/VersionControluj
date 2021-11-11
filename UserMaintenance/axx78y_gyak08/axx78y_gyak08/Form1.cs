@@ -95,5 +95,14 @@ namespace axx78y_gyak08
                 BallColor = button3.BackColor
             };
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Factory = new PresentFactory()
+            {
+                ribbon = button5.BackColor,
+                box = button6.BackColor
+            };
+        }
     }
 }
